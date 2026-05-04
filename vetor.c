@@ -1,12 +1,19 @@
 #include <stdio.h>
 
 int main(){
-    float notas[2]; //indice de 0 a 1
 
-    notas[0] = 10;
-    notas[1] = 8;
+    int quantidade_notas;
+    printf("Digite a quantidade de notas");
+    scanf("%d", &quantidade_notas);
+    float notas[quantidade_notas];
+    float soma;
 
-    float media = (notas[0] + notas[1])/2;
+    for(int i = 0; i < quantidade_notas; i++){
+        printf("Digite sua nota %d: ", i+1);
+        scanf("%f", &notas[i]);
+        soma += notas[i];
+    }
+    printf("Olha tua media ai: %.2f\n", soma/quantidade_notas);
 
-    printf("Sua media e: %.2f", media);
+    return 0;
 }
